@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MeterApp.ViewModels"
+             xmlns:c="clr-namespace:MeterApp.Converters"
+             x:Class="MeterApp.Pages.LoginPage"
+             x:DataType="vm:LoginViewModel"
+             Title="LoginPage"
+             BackgroundColor="#f5f5f5">
+
+    <ContentPage.Resources>
+        <c:UserInfoToStringArrayConverter x:Key="UserInfoToStringArrayConverter" />
+
+    </ContentPage.Resources>
+
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+        <Label Text="Welcome!" FontSize="28" FontAttributes="Bold" Margin="0,0,0,24"/>
+
+        <Entry x:Name="UsernameEntry" Placeholder="Username" Margin="0,0,0,12" FontSize="16" BackgroundColor="#ffffff" Text="{Binding User.Username}"/>
+
+        <Entry x:Name="PasswordEntry" Placeholder="Password" Margin="0,0,0,24" FontSize="16" BackgroundColor="#ffffff" IsPassword="True" Text="{Binding User.Username}"/>
+
+        <Button Text="Login"
+                BackgroundColor="#007aff" 
+                TextColor="#ffffff" 
+                FontSize="20" 
+                HeightRequest="50" 
+                CornerRadius="8" 
+                Command="{Binding LoginCommand}" />
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:styles="clr-namespace:MeterApp.Resources.Styles"
+             xmlns:vm="clr-namespace:MeterApp.ViewModels"
+             xmlns:m="clr-namespace:MeterApp.Models"
+             x:Class="MeterApp.Pages.HomePage"
+             x:DataType="vm:HomeViewModel"
+             BackgroundColor="#f5f5f5"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <styles:DefaultTheme />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!--<ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+
+            
+            <Label Text="{OnPlatform WinUI={Binding SerialPortResult.Weight}} "
+                   IsVisible="{OnPlatform WinUI=true, Default=false}"/>
+
+            <Label Text="{OnPlatform WinUI={Binding HomeOneModel.String}} "
+                   IsVisible="{OnPlatform WinUI=true, Default=false}"/>
+
+            <Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center"
+                />
+
+            <Button
+                Text="test"
+                Command="{OnPlatform WinUI={Binding TestCommand}}"
+                />
+
+            <Label Text="{Binding HomeOneModel.Stringtype}"
+                   TextColor="red"/>
+
+            <Label Text="{OnPlatform WinUI={Binding SerialPortResult.Weight}}"
+                   TextColor="Blue"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>-->
+
+    <StackLayout Orientation="Vertical"
+                 BackgroundColor="#f6f6f6">
+        <Frame VerticalOptions="FillAndExpand"
+               Margin="10"
+               HasShadow="True"
+               BackgroundColor="AliceBlue">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame  Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        Margin="0"
+                        Padding="0"
+                        HasShadow="True"
+                        BackgroundColor="AliceBlue">
+                    <Grid
+                      BackgroundColor="#f0f8ff">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <Frame  Grid.Row="0"
+                                VerticalOptions="FillAndExpand"
+                                Margin="0"
+                                Padding="0"
+                                HasShadow="True"
+                                BackgroundColor="AliceBlue">
+                            <Label Text="{OnPlatform WinUI={Binding SerialPortResult.Weight}}"
+                                   BackgroundColor="Bisque"
+                                   FontSize="{OnPlatform WinUI=90}"
+                                   TextColor="Red"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                               />
+                        </Frame>
+                        <Frame  Grid.Row="1"
+                                VerticalOptions="FillAndExpand"
+                                Margin="0"
+                                Padding="0"
+                                HasShadow="True"
+                                BackgroundColor="AliceBlue">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0"
+                                           Grid.Column="0"
+                                           Text="Property"
+                                           FontSize="10"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="1"
+                                           Grid.Column="0"
+                                           Text="Property"
+                                           FontSize="10"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="2"
+                                           Grid.Column="0"
+                                           Text="Property"
+                                           FontSize="10"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           Text="Property"
+                                           FontSize="10"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="4"
+                                           Grid.Column="0"
+                                           Text="Property"
+                                           FontSize="10"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+                                <Entry Grid.Column="1"
+                                       Grid.Row="0"
+                                       x:Name="p1" 
+                                       Placeholder="Entry Value" 
+                                       BackgroundColor="#ffffff"
+                                       Text=""
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       HeightRequest="50"
+                                       />
+                                <Entry Grid.Column="1"
+                                       Grid.Row="1"
+                                       x:Name="p2" 
+                                       Placeholder="Entry Value" 
+                                       BackgroundColor="#ffffff"
+                                       Text=""
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       HeightRequest="50"
+                                       />
+                                <Entry Grid.Column="1"
+                                       Grid.Row="2"
+                                       x:Name="p3" 
+                                       Placeholder="Entry Value" 
+                                       BackgroundColor="#ffffff"
+                                       Text=""
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       HeightRequest="50"
+                                       />
+                                <Entry Grid.Column="1"
+                                       Grid.Row="3"
+                                       x:Name="p4" 
+                                       Placeholder="Entry Value" 
+                                       BackgroundColor="#ffffff"
+                                       Text=""
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       HeightRequest="50"
+                                       />
+                                <Entry Grid.Column="1"
+                                       Grid.Row="4"
+                                       x:Name="p5" 
+                                       Placeholder="Entry Value" 
+                                       BackgroundColor="#ffffff"
+                                       Text=""
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       HeightRequest="50"
+                                       />
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </Frame>
+
+                <Grid
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="5"
+                    RowDefinitions="*,Auto"
+                    RowSpacing="0"
+                    >
+                                <RefreshView
+                        Grid.ColumnSpan="2"
+                        
+                       >
+                                    <ContentView>
+                                        <CollectionView
+                                    ItemsSource="{Binding MeterDatas}"
+                                    SelectionMode="None">
+                                            <CollectionView.EmptyView>
+                                                <StackLayout Padding="100">
+                                                    <Image
+                                                HorizontalOptions="Center"
+                                                HeightRequest="160"
+                                                WidthRequest="160"
+                                                Source="download_icon.png"
+                                                VerticalOptions="Center" />
+                                                </StackLayout>
+                                            </CollectionView.EmptyView>
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate x:DataType="m:MeterDataModel">
+                                                    <Grid Padding="10" HorizontalOptions="Fill">
+                                                        <Frame HeightRequest="125" >
+                                                <Grid Padding="0" ColumnDefinitions="125,*">
+                                                    <HorizontalStackLayout
+                                                            VerticalOptions="Center"
+                                                            Grid.Column="1"
+                                                            Padding="10"
+                                                            Spacing="10">
+
+                                                            <Label Text="{Binding Property1}" />
+                                                            <Label Text="{Binding Property2}" />
+                                                            <Label Text="{Binding Property3}" />
+                                                            <Label Text="{Binding Property4}" />
+                                                            <Label Text="{Binding Property5}" />
+                                                            <Label Text="{Binding Property6}" />
+                                                        <Label Grid.Column="6" Grid.Row="{Binding .}" Text="{Binding Property7}" />
+                                                    </HorizontalStackLayout>
+                                                            </Grid>
+                                                        </Frame>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                    </ContentView>
+                                </RefreshView>
+
+                                <Button
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="8"
+                        Text="Get Monkeys" />
+
+                                <Button
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="8"
+                        Text="Find Closest" />
+
+
+                                <ActivityIndicator
+                        Grid.RowSpan="2"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Grid>
+        </Frame>
+    </StackLayout>
+    
+
+</ContentPage>
