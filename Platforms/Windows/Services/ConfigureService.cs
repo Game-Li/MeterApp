@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using Windows.Services.Maps;
 using System.Collections.Specialized;
+using MeterApp.Platforms.Windows.Models;
 //using Microsoft.Extensions.Configuration;
 
 namespace MeterApp.Platforms.Windows.Services;

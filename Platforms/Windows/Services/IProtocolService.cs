@@ -1,4 +1,6 @@
-﻿namespace MeterApp.Platforms.Windows.Services;
+﻿using MeterApp.Platforms.Windows.Models;
+
+namespace MeterApp.Platforms.Windows.Services;
 
 public interface IProtocolService
 {

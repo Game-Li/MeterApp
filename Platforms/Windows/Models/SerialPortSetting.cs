@@ -1,13 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MeterApp.Platforms.Windows;
+namespace MeterApp.Platforms.Windows.Models;
 
-public class SerialPortSetting1
+public class SerialPortSetting
 {
     private string portName;
     private int baudrate;
@@ -22,12 +17,3 @@ public class SerialPortSetting1
     public double StopBits { get => stopBits; set => stopBits = value; }
 }
 
-public partial class SerialPortResult1 : ObservableObject
-{
-    [ObservableProperty]
-    public string? unit;
-    [ObservableProperty]
-    public double? weight;
-    [ObservableProperty]
-    public string? port;
-}

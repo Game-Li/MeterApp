@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# MVVMTK0032: Inherit from ObservableObject instead of using [INotifyPropertyChanged]
+dotnet_diagnostic.MVVMTK0032.severity = error
+
+# MVVMTK0034: Direct field reference to [ObservableProperty] backing field
+dotnet_diagnostic.MVVMTK0034.severity = error
+
+# MVVMTK0033: Inherit from ObservableObject instead of using [ObservableObject]
+dotnet_diagnostic.MVVMTK0033.severity = error

@@ -1,4 +1,6 @@
-﻿namespace MeterApp.Platforms.Windows.Services.Impl;
+﻿using MeterApp.Platforms.Windows.Models;
+
+namespace MeterApp.Platforms.Windows.Services.Impl;
 
 class Protocol_0X7E_ServiceImpl : IProtocolService
 {

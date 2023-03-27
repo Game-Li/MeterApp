@@ -5,6 +5,7 @@ using MeterApp.Services;
 using System.Collections.ObjectModel;
 #if WINDOWS
 using MeterApp.Platforms.Windows;
+using MeterApp.Platforms.Windows.Models;
 using MeterApp.Platforms.Windows.Services;
 #endif
 
@@ -14,16 +15,21 @@ namespace MeterApp.ViewModels;
 public partial class HomeViewModel : BaseViewModel
 {
     [ObservableProperty]
-    HomeOneModel homeOneModel;
+    HomeOneModel homeOne;
 
     [ObservableProperty]
     int counters = 0;
 
-    public ObservableCollection<MeterDataModel> MeterDatas { get; } = new();
-    
-#if WINDOWS
+    int wht = 0;
+
     [ObservableProperty]
-    SerialPortResult serialPortResult;
+    SerialPortMessage message;
+
+    public ObservableCollection<MeterDataModel> MeterDatas { get; } = new();
+
+#if WINDOWS
+/*    [ObservableProperty]
+    SerialPortResult serialPortResult;*/
 
     private SerialPortService _serialPortService;
 #endif
@@ -40,11 +46,11 @@ public partial class HomeViewModel : BaseViewModel
     {
         if (serialPortService is not null)
         {
-            HomeOneModel = new(){Stringtype = ""};
+            HomeOne = new(){Stringtype = ""};
             _serialPortService = serialPortService;
             _serialPortService.ComWeighParser += ReceiveSerialPortResult;
             _serialPortService.initCom();
-            SerialPortResult = new(){Weight = 0, Unit = "", Port = ""};
+            Message = new SerialPortMessage(){Weight = 0, Unit = "", Port = ""};
 
             for (int i = 0; i < 10; i++)
             {
@@ -66,9 +72,15 @@ public partial class HomeViewModel : BaseViewModel
 #if WINDOWS
     public void ReceiveSerialPortResult(ComWeighEventArgs e)
     {
-        SerialPortResult.Unit = e.Unit;
-        SerialPortResult.Weight = double.Parse(e.Weight);
-        SerialPortResult.Port = e.PortName;
+        /*        SerialPortMessage.Unit = e.Unit;
+                SerialPortMessage.Weight = double.Parse(e.Weight);
+                SerialPortMessage.Port = e.PortName;*/
+
+        wht = wht + 1;
+
+        Message.Unit = "kg";
+        Message.Weight = double.Parse(e.Weight);
+        Message.Port = "";
     }
 #endif
 
@@ -77,8 +89,8 @@ public partial class HomeViewModel : BaseViewModel
     void Test()
     {
         Counters++;
-        SerialPortResult.Weight = SerialPortResult.Weight + 1;
-        HomeOneModel.Stringtype = "hello"+SerialPortResult.Weight.ToString();
+        Message.Weight = Message.Weight + 1;
+        HomeOne.Stringtype = "hello"+ Message.Weight.ToString();
     }
 #endif
 }

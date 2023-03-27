@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using MeterApp.Platforms.Windows;
+using MeterApp.Platforms.Windows.Models;
 
 namespace MeterApp.Platforms.Windows.Services;
 
